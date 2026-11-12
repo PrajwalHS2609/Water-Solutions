@@ -1,0 +1,6 @@
+{
+  "name": "AquaPure Systems - Water Softener & Treatment Solutions",
+  "description": "Professional residential, commercial, and industrial water softening, hard water treatment, precision water testing, and maintenance services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
