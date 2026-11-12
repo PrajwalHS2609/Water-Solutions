@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, ShieldCheck, Wrench, Sparkles, Droplets, CheckCircle2 } from 'lucide-react';
+import { IMAGES } from '../assets/images';
 
 interface HeroSectionProps {
   onOpenWaterTest: () => void;
@@ -90,7 +91,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="lg:col-span-5 relative flex items-center">
             <div className="relative w-full rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 aspect-4/3 lg:aspect-auto lg:h-full">
               <img
-                src="/src/assets/images/hero_water_softener_1794388678055.jpg"
+                src={IMAGES.heroWaterSoftener}
+                onError={(e) => { e.currentTarget.src = '/images/hero_water_softener.jpg'; }}
                 alt="Modern luxury bathroom with spotless crystal clear soft water running from faucet"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

@@ -2,6 +2,7 @@ import React from 'react';
 import { HARD_WATER_SYMPTOMS } from '../data/waterData';
 import { AlertCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { WaterHardnessCalculator } from './WaterHardnessCalculator';
+import { IMAGES } from '../assets/images';
 
 interface HardWaterProblemsProps {
   onOpenWaterTest: (initialData?: { householdSize: number; hardnessGpg: number }) => void;
@@ -32,7 +33,8 @@ export const HardWaterProblems: React.FC<HardWaterProblemsProps> = ({ onOpenWate
           <div className="lg:col-span-5 space-y-4">
             <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md aspect-4/3 relative bg-slate-100">
               <img
-                src="/src/assets/images/hard_water_problems_1794388678984.jpg"
+                src={IMAGES.hardWaterProblems}
+                onError={(e) => { e.currentTarget.src = '/images/hard_water_problems.jpg'; }}
                 alt="Close-up comparison of mineral limescale and crust buildup on bathroom plumbing showerhead and tile grout"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

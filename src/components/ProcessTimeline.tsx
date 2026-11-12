@@ -1,6 +1,7 @@
 import React from 'react';
 import { PROCESS_STEPS } from '../data/waterData';
 import { ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { IMAGES } from '../assets/images';
 
 interface ProcessTimelineProps {
   onOpenWaterTest: () => void;
@@ -31,7 +32,8 @@ export const ProcessTimeline: React.FC<ProcessTimelineProps> = ({ onOpenWaterTes
           <div className="lg:col-span-5">
             <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-lg relative bg-slate-100 aspect-4/3 lg:aspect-auto lg:h-[480px]">
               <img
-                src="/src/assets/images/water_test_technician_1794388679196.jpg"
+                src={IMAGES.waterTestTechnician}
+                onError={(e) => { e.currentTarget.src = '/images/water_test_technician.jpg'; }}
                 alt="AquaPure certified water testing specialist conducting digital titration test inside modern kitchen"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Home, Sparkles, Check, ArrowRight, ShieldCheck, Heart, Droplets } from 'lucide-react';
 import { PageId } from '../types';
+import { IMAGES } from '../assets/images';
 
 interface ResidentialPageProps {
   onNavigate: (page: PageId) => void;
@@ -31,7 +32,8 @@ export const ResidentialPage: React.FC<ResidentialPageProps> = ({ onNavigate, on
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-white rounded-3xl p-8 sm:p-12 border border-slate-200">
           <div className="lg:col-span-6 rounded-2xl overflow-hidden aspect-4/3 relative bg-slate-900 border border-slate-200 shadow-md">
             <img
-              src="/src/assets/images/hero_water_softener_1794388678055.jpg"
+              src={IMAGES.heroWaterSoftener}
+              onError={(e) => { e.currentTarget.src = '/images/hero_water_softener.jpg'; }}
               alt="Spotless luxury residential bathroom with soft water fixtures"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"

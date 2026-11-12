@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShieldCheck, Award, Users, Droplet, CheckCircle, ArrowRight, Wrench } from 'lucide-react';
 import { PageId } from '../types';
+import { IMAGES } from '../assets/images';
 
 interface AboutPageProps {
   onNavigate: (page: PageId) => void;
@@ -31,7 +32,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenWaterTes
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 rounded-2xl overflow-hidden border border-slate-200 shadow-lg aspect-4/3 relative bg-slate-900">
             <img
-              src="/src/assets/images/water_test_technician_1794388679196.jpg"
+              src={IMAGES.waterTestTechnician}
+              onError={(e) => { e.currentTarget.src = '/images/water_test_technician.jpg'; }}
               alt="AquaPure water specialist analyzing water sample in Austin certified testing lab"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"

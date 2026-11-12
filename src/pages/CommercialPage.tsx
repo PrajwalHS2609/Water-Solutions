@@ -1,6 +1,7 @@
 import React from 'react';
 import { Building2, Utensils, Hotel, HeartPulse, Check, ArrowRight, ShieldCheck, FileSpreadsheet } from 'lucide-react';
 import { PageId } from '../types';
+import { IMAGES } from '../assets/images';
 
 interface CommercialPageProps {
   onNavigate: (page: PageId) => void;
@@ -31,7 +32,8 @@ export const CommercialPage: React.FC<CommercialPageProps> = ({ onNavigate, onOp
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-white rounded-3xl p-8 sm:p-12 border border-slate-200">
           <div className="lg:col-span-6 rounded-2xl overflow-hidden aspect-4/3 relative bg-slate-900 border border-slate-200 shadow-md">
             <img
-              src="/src/assets/images/commercial_softener_system_1794388679034.jpg"
+              src={IMAGES.commercialSoftenerSystem}
+              onError={(e) => { e.currentTarget.src = '/images/commercial_softener_system.jpg'; }}
               alt="High-flow commercial water softener vessel with digital PLC valve"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Check, Droplet, Sparkles, Building2, Factory, Home } from 'lucide-react';
 import { PageId } from '../types';
+import { IMAGES } from '../assets/images';
 
 interface SolutionsSectionProps {
   onNavigate: (page: PageId) => void;
@@ -34,7 +35,8 @@ export const SolutionsSection: React.FC<SolutionsSectionProps> = ({
         <div className="my-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-800/60 rounded-3xl p-6 lg:p-10 border border-slate-700">
           <div className="lg:col-span-5 rounded-2xl overflow-hidden aspect-4/3 relative bg-slate-950 border border-slate-700">
             <img
-              src="/src/assets/images/commercial_softener_system_1794388679034.jpg"
+              src={IMAGES.commercialSoftenerSystem}
+              onError={(e) => { e.currentTarget.src = '/images/commercial_softener_system.jpg'; }}
               alt="High-efficiency whole-house water softener system with digital valve controller and brine tank in clean utility room"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
